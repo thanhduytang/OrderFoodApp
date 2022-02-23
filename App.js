@@ -15,6 +15,8 @@ import { theme } from "./src/infrastructure/index";
 import { SafeArea } from "./src/components/utils/safe-area.component";
 import { Ionicons } from "@expo/vector-icons";
 
+import { RestaurantContextProvider } from "./src/services/restaurants/restaurants.context";
+
 export default function App() {
   const [oswaldLoaded] = useOswald({
     Oswald_400Regular,
@@ -29,7 +31,7 @@ export default function App() {
 
   const Tab = createBottomTabNavigator();
   const TAB_ICON = {
-    Restaurant: "md-restaurant",
+    Restaurants: "md-restaurant",
     Map: "md-map",
     Settings: "md-settings",
   };
@@ -70,13 +72,15 @@ export default function App() {
   return (
     <>
       <ThemeProvider theme={theme}>
-        <NavigationContainer>
-          <Tab.Navigator screenOptions={createScreenOptions}>
-            <Tab.Screen name="Restaurants" component={RestaurantsScreen} />
-            <Tab.Screen name="Map" component={Map} />
-            <Tab.Screen name="Settings" component={Settings} />
-          </Tab.Navigator>
-        </NavigationContainer>
+        <RestaurantContextProvider>
+          <NavigationContainer>
+            <Tab.Navigator screenOptions={createScreenOptions}>
+              <Tab.Screen name="Restaurants" component={RestaurantsScreen} />
+              <Tab.Screen name="Map" component={Map} />
+              <Tab.Screen name="Settings" component={Settings} />
+            </Tab.Navigator>
+          </NavigationContainer>
+        </RestaurantContextProvider>
       </ThemeProvider>
       <ExpoStatusBar style="auto" />
     </>
