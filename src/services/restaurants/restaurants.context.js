@@ -8,7 +8,7 @@ import {
 
 export const RestaurantContext = createContext();
 
-export const RestaurantContextProvider = ({ children }) => {
+export const RestaurantsContextProvider = ({ children }) => {
   const [restaurants, setRestaurants] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
