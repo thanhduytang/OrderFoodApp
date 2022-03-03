@@ -8,8 +8,9 @@ import { SafeArea } from "../../../components/utils/safe-area.component";
 import { SafeAreaProvider } from "react-native-safe-area-context";
 
 import { FavouritesBar } from "../../../components/favourites/favourites-bar.component";
-
 import { RestaurantContext } from "../../../services/restaurants/restaurants.context";
+import { FavouritesContext } from "../../../services/favourites/favourites.context";
+
 import { Search } from "../components/search.component";
 import { RestaurantInfoCard } from "../components/restaurant-info-card.component";
 
@@ -33,6 +34,7 @@ const Loading = styled(ActivityIndicator)`
 
 export const RestaurantsScreen = ({ navigation }) => {
   const { restaurants, isLoading } = useContext(RestaurantContext);
+  const { favourites } = useContext(FavouritesContext);
   const [isToggled, setIsToggled] = useState(false);
 
   return (
@@ -47,7 +49,12 @@ export const RestaurantsScreen = ({ navigation }) => {
           isFavouritesToggled={isToggled}
           onFavouritesToggled={() => setIsToggled(!isToggled)}
         />
-        {isToggled && <FavouritesBar />}
+        {isToggled && (
+          <FavouritesBar
+            favourites={favourites}
+            onNavigate={navigation.navigate}
+          />
+        )}
         <RestaurantList
           data={restaurants}
           renderItem={({ item }) => {
