@@ -9,10 +9,21 @@ import { useFonts as useLato, Lato_400Regular } from "@expo-google-fonts/lato";
 import { ThemeProvider } from "styled-components/native";
 import { theme } from "./src/infrastructure/theme/index";
 
-import { RestaurantsContextProvider } from "./src/services/restaurants/restaurants.context";
-import { LocationContextProvider } from "./src/services/location/location.context";
-import { FavouritesContextProvider } from "./src/services/favourites/favourites.context";
+import { AuthenticationContextProvider } from "./src/services/authentication/authentication.context";
 import { Navigation } from "./src/infrastructure/navigation/index";
+
+import { initializeApp } from "firebase/app";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyBV5AR91XyYhTM0HKQrIDBPKWCY93xRuUk",
+  authDomain: "foodorderapp-ca16e.firebaseapp.com",
+  projectId: "foodorderapp-ca16e",
+  storageBucket: "foodorderapp-ca16e.appspot.com",
+  messagingSenderId: "65053015310",
+  appId: "1:65053015310:web:4aed96fa3083cf70f7eb5f",
+};
+
+initializeApp(firebaseConfig);
 
 export default function App() {
   const [oswaldLoaded] = useOswald({
@@ -29,13 +40,9 @@ export default function App() {
   return (
     <>
       <ThemeProvider theme={theme}>
-        <FavouritesContextProvider>
-          <LocationContextProvider>
-            <RestaurantsContextProvider>
-              <Navigation />
-            </RestaurantsContextProvider>
-          </LocationContextProvider>
-        </FavouritesContextProvider>
+        <AuthenticationContextProvider>
+          <Navigation />
+        </AuthenticationContextProvider>
       </ThemeProvider>
       <ExpoStatusBar style="auto" />
     </>
