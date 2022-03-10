@@ -53,9 +53,9 @@ export const AuthInput = styled(TextInput).attrs({
 `;
 
 export const AnimationWrapper = styled.View`
-  width: 100%;
-  height: 30%;
+  width: 90%;
+  height: 35%;
   position: absolute;
-  top: 30px;
+  top: 20px;
   padding: ${(props) => props.theme.space[2]};
 `;

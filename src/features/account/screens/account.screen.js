@@ -20,7 +20,7 @@ export const AccountScreen = ({ navigation }) => {
           autoPlay
           loop
           resizeMode="cover"
-          source={require("../../../../assets/foodlogo")}
+          source={require("../../../../assets/food-logo")}
         />
       </AnimationWrapper>
       <Title>Food Ordering App</Title>
