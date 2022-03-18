@@ -15,4 +15,8 @@ web-build/
 
 */node_modules/**/*
 .runtimeconfig.json
+<<<<<<< HEAD
 firebase-debug.log
+=======
+firebae-debug.log
+>>>>>>> 5d30f8eff14fef46706da77ba9a302c28359f605
