@@ -1,5 +1,5 @@
 import React, { useState, useContext } from "react";
-import { Colors, ActivityIndicator } from "react-native-paper";
+import { ActivityIndicator } from "react-native-paper";
 import { TouchableOpacity } from "react-native";
 import styled from "styled-components/native";
 
@@ -17,6 +17,7 @@ import { Search } from "../components/search.component";
 import { RestaurantInfoCard } from "../components/restaurant-info-card.component";
 
 import { RestaurantList } from "../components/restaurant-list.styles";
+import { colors } from "../../../infrastructure/theme/colors";
 
 const LoadingContainer = styled.View`
   position: absolute;
@@ -41,7 +42,7 @@ export const RestaurantsScreen = ({ navigation }) => {
       <SafeArea>
         {isLoading && (
           <LoadingContainer>
-            <Loading size={50} animating={true} color={Colors.blue300} />
+            <Loading size={50} animating={true} color={colors.brand.primary} />
           </LoadingContainer>
         )}
         <Search

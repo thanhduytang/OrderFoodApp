@@ -14,6 +14,7 @@ import { FavouritesContextProvider } from "../../services/favourites/favourites.
 import { CartContextProvider } from "../../services/cart/cart.context";
 
 import { SettingsNavigator } from "./settings.navigator";
+import { colors } from "../theme/colors";
 
 const Tab = createBottomTabNavigator();
 const TAB_ICON = {
@@ -33,8 +34,8 @@ const createScreenOptions = ({ route }) => {
   return {
     headerShown: false,
     tabBarIcon: tabBarIcon(iconName),
-    tabBarActiveTintColor: "tomato",
-    tabBarInactiveTintColor: "gray",
+    tabBarActiveTintColor: colors.brand.primary,
+    tabBarInactiveTintColor: colors.brand.muted,
     tabBarStyle: [
       {
         display: "flex",

@@ -13,6 +13,7 @@ export const RestaurantList = styled(FlatList).attrs({
 
 export const OrderButton = styled(Button).attrs({
   color: colors.brand.primary,
+  labelStyle: { color: "white" },
 })`
   padding: ${(props) => props.theme.space[2]};
   width: 80%;
