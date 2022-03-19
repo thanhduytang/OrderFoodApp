@@ -18,6 +18,7 @@ import { RestaurantInfoCard } from "../components/restaurant-info-card.component
 
 import { RestaurantList } from "../components/restaurant-list.styles";
 import { colors } from "../../../infrastructure/theme/colors";
+import { FadeInView } from "../../../components/animations/faded.animation";
 
 const LoadingContainer = styled.View`
   position: absolute;
@@ -62,7 +63,7 @@ export const RestaurantsScreen = ({ navigation }) => {
             </Text>
           </Spacer>
         )}
-        {!hasError && (
+        {!hasError && !isLoading && (
           <RestaurantList
             data={restaurants}
             renderItem={({ item }) => {
@@ -75,7 +76,9 @@ export const RestaurantsScreen = ({ navigation }) => {
                   }
                 >
                   <Spacer position="bottom" size="large">
-                    <RestaurantInfoCard restaurant={item} />
+                    <FadeInView>
+                      <RestaurantInfoCard restaurant={item} />
+                    </FadeInView>
                   </Spacer>
                 </TouchableOpacity>
               );

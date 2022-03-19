@@ -23,7 +23,9 @@ const SettingsBackground = styled.ImageBackground.attrs({
   width: 100%;
 `;
 
-const SettingsItems = styled(List.Item)`
+const SettingsItems = styled(List.Item).attrs({
+  titleStyle: { color: "white" },
+})`
   padding: ${(props) => props.theme.space[3]};
   background-color: rgba(255, 255, 255, 0.4);
 `;
@@ -67,7 +69,7 @@ export const SettingsScreen = ({ navigation }) => {
             )}
           </TouchableOpacity>
           <Spacer position="top" size="large">
-            <Text variant="label">{user.email}</Text>
+            <Text variant="email">{user.email}</Text>
           </Spacer>
         </AvatarContainer>
 
@@ -76,13 +78,13 @@ export const SettingsScreen = ({ navigation }) => {
             title="Favourites"
             description="View your favourites"
             left={(props) => (
-              <List.Icon {...props} color="black" icon="heart" />
+              <List.Icon {...props} color={colors.ui.error} icon="heart" />
             )}
             onPress={() => navigation.navigate("Favourites")}
           />
           <SettingsItems
             title="Logout"
-            left={(props) => <List.Icon {...props} color="black" icon="door" />}
+            left={(props) => <List.Icon {...props} color="white" icon="door" />}
             onPress={onLogout}
           />
         </List.Section>

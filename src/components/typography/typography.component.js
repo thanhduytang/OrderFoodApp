@@ -30,6 +30,13 @@ const label = (theme) => `
     font-family: ${theme.fonts.heading};
     font-size: ${theme.fontSizes.body};
     font-weight: ${theme.fontWeights.medium};
+    `;
+
+const email = (theme) => `
+    font-family: ${theme.fonts.heading};
+    font-size: ${theme.fontSizes.body};
+    font-weight: ${theme.fontWeights.medium};
+    color: white;
 `;
 
 const variants = {
@@ -38,6 +45,7 @@ const variants = {
   caption,
   error,
   hint,
+  email,
 };
 
 export const Text = styled.Text`
