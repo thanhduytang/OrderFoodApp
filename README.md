@@ -5,5 +5,5 @@ My name is Tăng Thanh Duy. I just graduated IT degree from The University of We
 ## Demo App
 
 ### Account page
-<img src="./assets/demo/Account.jpg" width="400" height="400">
+<img src="./assets/demo/Account.jpg" width="500" height="800">
 
