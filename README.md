@@ -23,7 +23,7 @@ My name is Tăng Thanh Duy. I just graduated IT degree from The University of We
 <img src="./assets/demo/Account.jpg" width="500" height="800">
 
 ### Empty Cart page
-<img src="./assets/demo/EmptyCart.jpg" width="500" height="800">
+<img src="./assets/demo/EmptyCart.jpeg" width="500" height="800">
 
 ### Cart page
 <img src="./assets/demo/Cart.jpg" width="500" height="800">
