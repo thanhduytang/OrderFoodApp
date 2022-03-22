@@ -11,19 +11,11 @@ import { theme } from "./src/infrastructure/theme/index";
 
 import { AuthenticationContextProvider } from "./src/services/authentication/authentication.context";
 import { Navigation } from "./src/infrastructure/navigation/index";
+import { firebaseSettings } from "./src/utils/env";
 
 import { initializeApp } from "firebase/app";
 
-const firebaseConfig = {
-  apiKey: "AIzaSyBV5AR91XyYhTM0HKQrIDBPKWCY93xRuUk",
-  authDomain: "foodorderapp-ca16e.firebaseapp.com",
-  projectId: "foodorderapp-ca16e",
-  storageBucket: "foodorderapp-ca16e.appspot.com",
-  messagingSenderId: "65053015310",
-  appId: "1:65053015310:web:4aed96fa3083cf70f7eb5f",
-};
-
-initializeApp(firebaseConfig);
+initializeApp(firebaseSettings);
 
 export default function App() {
   const [oswaldLoaded] = useOswald({

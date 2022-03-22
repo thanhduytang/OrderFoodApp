@@ -8,3 +8,12 @@ export const isAndroid = Platform.OS === "android";
 export const isDevelopment = process.env.NODE_ENV === "development";
 export const isMock = true;
 export const host = !isDevelopment || isAndroid ? liveHost : localHost;
+
+export const firebaseSettings = {
+  apiKey: "AIzaSyBV5AR91XyYhTM0HKQrIDBPKWCY93xRuUk",
+  authDomain: "foodorderapp-ca16e.firebaseapp.com",
+  projectId: "foodorderapp-ca16e",
+  storageBucket: "foodorderapp-ca16e.appspot.com",
+  messagingSenderId: "65053015310",
+  appId: "1:65053015310:web:4aed96fa3083cf70f7eb5f",
+};
